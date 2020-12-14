@@ -1,0 +1,387 @@
+.rome-page {
+  .button {
+    transition: box-shadow 0.1s;
+
+    &:hover {
+      box-shadow: 2px 2px 14px 12px rgba(0, 0, 0, 0.13);
+    }
+    img {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .hero {
+    background: url(/assets/img/rome-hero/@3x.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    color: $white;
+    a {
+      color: $white;
+    }
+
+    .logo {
+      z-index: 1;
+      color: $white;
+      position: absolute;
+      margin: 20px;
+      > span {
+        vertical-align: middle;
+        margin-left: 0.5rem;
+      }
+      > small {
+        &::before {
+          content: "|";
+          margin-right: 1rem;
+        }
+        margin-left: rem-calc(50);
+      }
+    }
+
+    .explore {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .management {
+    h1 {
+      color: $dark-gray;
+    }
+    @include breakpoint(small only) {
+      h1 {
+        margin: 2rem 0;
+      }
+      cite {
+        margin-bottom: 1rem;
+      }
+    }
+    @include breakpoint(medium) {
+      height: 80vh;
+      min-height: 700px;
+      overflow: hidden;
+      blockquote {
+        min-width: 450px;
+      }
+    }
+  }
+
+  .power-plant {
+    h1 {
+      margin: rem-calc(50 0 30 0);
+    }
+
+    @include breakpoint(medium) {
+      h1 {
+        margin: rem-calc(90 0 70 0);
+      }
+    }
+
+    color: $white;
+    .slider-section {
+      background: url(/assets/img/rome-hero/@3x.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 80vh;
+      min-height: 800px;
+      position: relative;
+
+      > div:nth-child(2) {
+        margin-bottom: 90px;
+      }
+    }
+
+    .cards-section {
+      position: relative;
+      height: 80vh;
+
+      .productive-cycle-card {
+        background-color: $primary-color;
+        color: $white;
+        position: absolute;
+        bottom: 20%;
+        min-height: 80vh;
+
+        @include breakpoint(small only) {
+          padding: 1rem;
+          transition: transform 0.2s;
+          transform: scale(1);
+          &:hover {
+            transform: scale(1.05);
+            z-index: 2;
+          }
+        }
+
+        .expand-btn {
+          position: absolute;
+          background-color: $primary-shade;
+        }
+      }
+
+      .power-plant-policy-card {
+        @include breakpoint(small only) {
+          padding: 1rem 0 0 0;
+        }
+        background-color: $light-gray;
+        color: $black;
+        z-index: 1;
+        position: absolute;
+        right: 8.3%;
+        bottom: 0;
+        min-height: 80vh;
+        // min-height: 800px;
+
+        .orbit-slide h2 {
+          color: $primary-color;
+        }
+
+        .orbit {
+          padding: 0 1rem;
+        }
+      }
+    }
+
+    .today-section {
+      color: $black;
+      h3 {
+        margin-bottom: rem-calc(50);
+      }
+
+      button {
+        margin: rem-calc(50 0);
+      }
+    }
+  }
+
+  #cycle-scheme-modal {
+    img {
+      width: 100%;
+    }
+  }
+
+  .territory {
+    background-color: $light-gray;
+    padding: rem-calc(50 0 39 0);
+  }
+
+  .environmental-aspects {
+    color: $white;
+    background-image: linear-gradient(to bottom, $primary-color, $primary-shade 30%, $white 30%, $white);
+    h1 {
+      margin: rem-calc(50 0 30 0);
+    }
+
+    @include breakpoint(medium) {
+      h1 {
+        margin: rem-calc(90 0 70 0);
+      }
+    }
+
+    .env-card {
+      position: relative;
+      color: $white;
+      height: 280px;
+      background-size: cover;
+      box-shadow: 2px 2px 14px 5px rgba(0, 0, 0, 0.13);
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: linear-gradient(to bottom, $primary-color, transparent);
+      }
+
+      &:nth-child(1) {
+        background-image: url(/assets/img/environmental-aspects/energy/@1x.jpg);
+      }
+      &:nth-child(2) {
+        background-image: url(/assets/img/environmental-aspects/air/@1x.jpg);
+      }
+
+      &:nth-child(3) {
+        background-image: url(/assets/img/environmental-aspects/water/@1x.jpg);
+      }
+
+      &:nth-child(4) {
+        background-image: url(/assets/img/environmental-aspects/land/@1x.jpg);
+      }
+
+      &:nth-child(5) {
+        background-image: url(/assets/img/environmental-aspects/other/@1x.jpg);
+      }
+    }
+  }
+
+  #energy-modal {
+    button {
+      margin: 0;
+      span {
+        vertical-align: middle;
+      }
+      img {
+        vertical-align: inherit;
+      }
+    }
+
+    header {
+      img {
+        width: 100%;
+      }
+      h1 {
+        color: $primary-color;
+        margin: rem-calc(50 0);
+      }
+    }
+
+    h2 {
+      margin-bottom: rem-calc(20);
+    }
+
+    h2 + p {
+      margin-bottom: rem-calc(25);
+    }
+
+    h3 {
+      color: $primary-shade;
+    }
+
+    .grid-x {
+      margin-bottom: 80px;
+
+      div {
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 0.5rem;
+          height: 35%;
+          background-color: $light-gray;
+          position: absolute;
+          left: -1.5rem;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  .security {
+    @include breakpoint(small only) {
+      h1 {
+        margin: rem-calc(50 0 30 0);
+      }
+    }
+    background: $light-gray;
+  }
+
+  .environmental-plan {
+    h1 {
+      color: $primary-color;
+    }
+
+    .plan-card {
+      cursor: pointer;
+      color: $primary-color;
+      transition: box-shadow 0.4s, transform 0.4s;
+      padding: 2rem 1rem;
+      will-change: box-shadow;
+
+      h2 {
+        margin-bottom: rem-calc(20);
+      }
+
+      .icon-expand {
+        transition: fill 0.4s;
+        fill: $black;
+      }
+
+      &:hover {
+        box-shadow: 2px 2px 14px 5px rgba(0, 0, 0, 0.13);
+        transform: scale(1.05);
+
+        .icon-expand {
+          fill: $primary-color;
+        }
+      }
+    }
+
+    .download-section {
+      position: relative;
+      background-image: linear-gradient(to bottom, $primary-color, $primary-shade);
+      color: $white;
+
+      > * {
+        z-index: 1;
+      }
+
+      .icon-block {
+        cursor: pointer;
+        > img:first-child {
+          padding: 0.5rem 1.5rem;
+          margin: 0.5rem;
+          background-color: $primary-color;
+          box-shadow: 2px 2px 14px 12px rgba(0, 0, 0, 0.13);
+        }
+      }
+
+      &::after {
+        content: "DOWNLOAD";
+        bottom: 0;
+        position: absolute;
+        color: $primary-shade;
+        font-size: calc(100vh / 3);
+        line-height: 70%;
+        text-align: center;
+        vertical-align: middle;
+        z-index: 0;
+      }
+    }
+  }
+
+  footer {
+    color: $white;
+
+    @include breakpoint(large) {
+      height: 50vh;
+      overflow: hidden;
+    }
+
+    .left {
+      background-color: $black;
+      @include breakpoint(small only) {
+        padding: 1rem;
+      }
+
+      p > span {
+        opacity: 0.5;
+      }
+    }
+
+    .right {
+      background-color: $darker-gray;
+      @include breakpoint(small only) {
+        padding: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        hr {
+          border-color: $black;
+          margin: 0.7rem auto;
+        }
+      }
+    }
+  }
+}

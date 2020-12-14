@@ -1,0 +1,145 @@
+p, blockquote {
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 2px;
+}
+
+cite {
+  font-family: $body-font-family;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
+}
+
+a.with-arrow {
+  color: $white;
+  font-weight: bold;
+
+  &::after {
+    vertical-align: middle;
+    margin: 1rem;
+    content: url(/assets//img/right-arrow.svg);
+  }
+
+  &.primary {
+    color: $primary-color;
+
+    &::after {
+      content: url(/assets//img/right-arrow-red.svg);
+    }
+  }
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+// TOP BAR
+.top-bar {
+  padding: 11px 22px 14px 21px;
+
+  ul {
+    li {
+      margin-right: 25px;
+    }
+  }
+  &.revert {
+    &,
+    ul {
+      background-color: $primary-color;
+      li a {
+        color: $white;
+      }
+    }
+  }
+}
+
+// BLOCKQUOTE
+
+blockquote {
+  position: relative;
+
+  &::before {
+    content: url(../assets/img/quotation-mark.svg);
+    position: absolute;
+    left: 0;
+  }
+
+  cite {
+    &::before {
+      content: "";
+    }
+    font-weight: bold;
+    font-style: normal;
+    margin-top: 3rem;
+    .name {
+      color: $primary-color;
+    }
+
+    // .role {
+    // }
+  }
+}
+
+// ORBIT/CAROUSEL/SLIDER
+.orbit {
+  .orbit-bullets {
+    &.light {
+      button {
+        background-color: $light-gray;
+
+        &:not(.is-active):hover {
+          background-color: darken($light-gray, 5);
+        }
+        &.is-active {
+          background-color: $primary-color;
+        }
+      }
+    }
+    button {
+      border-radius: 0;
+      height: 1rem;
+      width: 3rem;
+    }
+  }
+
+  .orbit-previous,
+  .orbit-next {
+    fill: $dark-gray;
+    padding: 1rem 0.5rem;
+    background-color: $white;
+    &:hover {
+      fill: $primary-color;
+    }
+  }
+}
+
+// TABS
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  border: none;
+  align-items: flex-end;
+
+  .tabs-title {
+    margin: rem-calc(0 5);
+    a {
+      color: $black;
+      padding: 1.5rem 2.5rem;
+      font-size: rem-calc(35);
+      
+    }
+
+    &.is-active {
+      a {
+        color: $white;
+        background-color: $primary-color;
+      }
+    }
+
+    &:not(.is-active) {
+      border-bottom: 4px solid $black;
+    }
+  }
+}
